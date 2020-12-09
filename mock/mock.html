@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<script src="https://lib.baomitu.com/jquery/3.5.1/jquery.js"></script>
+	<script src="http://mockjs.com/dist/mock.js"></script>
+	<script src="./mock.js"></script>
+	<body>
+		<div>
+			<button>点击</button>
+		</div>
+	</body>
+	<script>
+		$("button").click(function(){
+			$.ajax({
+				url:"http://www.douyu.com",
+				type:"get",
+				success:function(s){
+					console.log(JSON.parse(s));
+				},
+				error:function(e){
+					console.log(e);
+				}
+			})
+		})
+	</script>
+</html>
